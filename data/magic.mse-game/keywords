@@ -2065,3 +2065,14 @@ keyword:
 	match: Munitions toke<atom-param>*s</atom-param>
 	mode: expert
 	reminder: {handle_merged_rt(if param1.value == "ns" then "They’re artifacts" else "It’s an artifact", moved:"A Munitions token is an artifact")} with "When this token leaves the battlefield, it deals 2 damage to any target."
+#Marvel's Spider-Man
+keyword:
+	keyword: Web-slinging
+	match: Web-slinging<atom-param>cost</atom-param>
+	mode: expert
+	reminder: You may cast a spell for its web-slinging cost if you also return a tapped creature you control to its owner’s hand.
+keyword:
+	keyword: Mayhem
+	match: Mayhem <atom-param>cost</atom-param>
+	mode: expert
+	reminder: You may cast this card from your graveyard for {param1} if you discarded it this turn. Timing rules still apply.
