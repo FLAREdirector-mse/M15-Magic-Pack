@@ -723,6 +723,16 @@ keyword:
 	match: have exalted
 	mode: expert
 	reminder: Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn for each instance of exalted among permanents you control.
+keyword:
+	keyword: Exalted
+	match: and exalted
+	mode: expert
+	reminder: Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn for each instance of exalted among permanents you control.
+keyword:
+	keyword: Exalted
+	match: with exalted
+	mode: expert
+	reminder: Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn for each instance of exalted among permanents you control.
 # Conflux
 keyword:
 	keyword: Basic landcycling
@@ -2076,3 +2086,36 @@ keyword:
 	match: Mayhem <atom-param>cost</atom-param>
 	mode: expert
 	reminder: You may cast this card from your graveyard for {param1} if you discarded it this turn. Timing rules still apply.
+#Avatar: The Last Airbender
+#technically WIP but i'm okay with making airbend the user's problem
+keyword:
+	keyword: Airbend
+	match: airbend
+	mode: action
+	reminder: {handle_action_rt(to:"airbend a permanent", "Exile")} it. While it's exiled, its owner may cast it for <sym>2</sym> rather than its mana cost.
+#cajun please don't be mad
+keyword:
+	keyword: Firebending
+	match: Firebending <atom-param>number</atom-param>
+	mode: expert
+	reminder: Whenever this creature attacks, add {if param1.value == "X" then "X [R]" else if param1.value == "1" then "[R]" else if param1.value == "2" then "[R][R]" else if param1.value == "3" then "[R][R][R]" else if param1.value == "4" then "[R][R][R][R]" else if param1.value == "5" then "[R][R][R][R][R]" else "[R] equal to its firebending value"}. This mana lasts until end of combat.
+keyword:
+	keyword: Firebending
+	match: with firebending <atom-param>number</atom-param>
+	mode: expert
+	reminder: Whenever a creature you control with firebending {param1} attacks, add {if param1.value == "X" then "X [R]" else if param1.value == "1" then "[R]" else if param1.value == "2" then "[R][R]" else if param1.value == "3" then "[R][R][R]" else if param1.value == "4" then "[R][R][R][R]" else if param1.value == "5" then "[R][R][R][R][R]" else "[R] equal to its firebending value"}. This mana lasts until end of combat.
+keyword:
+	keyword: Firebending
+	match: and firebending <atom-param>number</atom-param>
+	mode: expert
+	reminder: Whenever a creature you control with firebending {param1} attacks, add {if param1.value == "X" then "X [R]" else if param1.value == "1" then "[R]" else if param1.value == "2" then "[R][R]" else if param1.value == "3" then "[R][R][R]" else if param1.value == "4" then "[R][R][R][R]" else if param1.value == "5" then "[R][R][R][R][R]" else "[R] equal to its firebending value"}. This mana lasts until end of combat.
+keyword:
+	keyword: Waterbend
+	match: Waterbend <atom-param>cost</atom-param>
+	mode: expert
+	reminder: While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for <sym>1</sym>.
+keyword:
+	keyword: Earthbend
+	match: Earthbend <atom-param>number</atom-param>
+	mode: expert
+	reminder: Target land you control becomes a 0/0 creature with haste that's still a land. Put {english_number_a(param1)} +1/+1 counter(s) on it. When it dies or is exiled, return it to the battlefield tapped.
